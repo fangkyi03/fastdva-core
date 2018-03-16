@@ -1,0 +1,26 @@
+{
+  "name": "koa-js",
+  "version": "1.0.0",
+  "description": "一个性能比dva更好的框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangkyi03/koa.git"
+  },
+  "keywords": [
+    "dva",
+    "redux",
+    "react-redux",
+    "redux-saga"
+  ],
+  "author": "fangkyi02",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangkyi03/koa/issues"
+  },
+  "homepage": "https://github.com/fangkyi03/koa#readme"
+}
