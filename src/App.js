@@ -7,7 +7,7 @@ import {connect} from './package/koajs/index'
 class App extends Component {
 
   onButtonDown = () =>{
-    this.props.dispatch({type:'app/add',payload:{sd:'adasda',d:10}})
+    this.props.dispatch({type:'app/clear',payload:{sd:'adasda',d:10}})
   }
 
   render() {

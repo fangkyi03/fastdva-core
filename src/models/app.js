@@ -9,8 +9,10 @@ export default {
         }
     },
     effects : {
-        *clear(xxx,bbb){
-            console.log('输出aaa',xxx,bbb)
+        *clear({payload},{select,put}){
+            const a = yield select(({app})=>({...app}))
+            console.log('输出a',a)
+            yield put({type:'app/add',payload})
         }
     }
 }

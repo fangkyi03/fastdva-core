@@ -1,4 +1,5 @@
 import {runSaga} from 'redux-saga'
+import * as sagaEffects from 'redux-saga/effects'
 
 export default function (option) {
     const app = {
@@ -43,7 +44,7 @@ export default function (option) {
     }
 
     function startSaga(name,fun,action) {
-        runSaga(app._model[name].effects[fun],{subscribe,dispatch,getState})
+        runSaga({subscribe,dispatch,getState},app._model[name].effects[fun],action,sagaEffects)
     }
 
     /**
@@ -92,6 +93,8 @@ export default function (option) {
      * @param {any} params 
      */
     function subscribe(params) {
-        
+        return function unsubscribe(){
+
+        }
     }
 }
