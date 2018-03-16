@@ -22,5 +22,7 @@
   "bugs": {
     "url": "https://github.com/fangkyi03/koa/issues"
   },
-  "homepage": "https://github.com/fangkyi03/koa#readme"
+  "homepage": "https://github.com/fangkyi03/koa#readme",
+  "dependencies": {
+  }
 }

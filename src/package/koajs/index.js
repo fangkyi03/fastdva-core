@@ -1,5 +1,4 @@
 import createStore from './src/createStore'
-
-module.exports = {
+export {
     createStore
 }
