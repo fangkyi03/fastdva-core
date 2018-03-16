@@ -29,6 +29,21 @@ export function createConnect(
         }
         
         /**
+         * 如果页面被销毁则清除掉原来的监听事件 减少计算
+         * 
+         * @memberof Connect
+         */
+        componentWillUnmount = () => {
+            modelList.forEach((e)=>{
+                this.timestamp.forEach((el)=>{
+                    if (this.store.callBackList[e][el]){
+                        delete this.store.callBackList[e][el]
+                    }
+                })
+            })
+        };
+        
+        /**
          * 初始化监听
          * 
          * @memberof Connect

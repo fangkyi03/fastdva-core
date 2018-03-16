@@ -9,8 +9,9 @@ export default {
         }
     },
     effects : {
-        *clear(xxx,bbb){
-            console.log('输出aaa',xxx,bbb)
+        *clear(xxx,{select}){
+            const a = yield select(({app})=>({...app}))
+            console.log('a',a)
         }
     }
 }

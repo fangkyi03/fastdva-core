@@ -12,7 +12,7 @@ console.log('createStore', createStore);
 const app = createStore({})
 app.model(appModels)
 console.log('输出store',app.getState());
-app.dispatch({type:'app/add',payload:{a:20,b:20,c:30}})
+app.dispatch({type:'app/clear',payload:{a:20,b:20,c:30}})
 const AppView = () => {
     return (
         <Provider store={app}>
