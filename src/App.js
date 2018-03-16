@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import {connect} from './package/koajs/index'
+import {connect} from './package/fastkit-dva';
 
 class App extends Component {
 
