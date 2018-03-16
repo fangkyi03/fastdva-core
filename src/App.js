@@ -6,12 +6,34 @@ import {connect} from './package/fastkit-dva';
 
 class App extends Component {
 
-  onButtonDown = () =>{
-    this.props.dispatch({type:'app/clear',payload:{sd:'adasda',d:10}})
+  /**
+   * 添加按钮被按下
+   * 
+   * @memberof App
+   */
+  onButtonAdd = () =>{
+    this.props.dispatch({type:'app/add'})
+  }
+
+  /**
+   * 减少按钮被按下
+   * 
+   * @memberof App
+   */
+  onButtonReduce = () =>{
+    this.props.dispatch({type:'app/reduce'})
+  }
+
+  /**
+   * 重置按钮被按下
+   * 
+   * @memberof App
+   */
+  onButtonClear = () =>{
+    this.props.dispatch({type:'app/clear'})
   }
 
   render() {
-    console.log('输出dispatch',this.props.dispatch);
     return (
       <div className="App">
         <header className="App-header">
@@ -21,8 +43,10 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={this.onButtonDown}>按钮点击事件</button>
-        <li>{`D显示${this.props.d}`}</li>
+        <button onClick={this.onButtonReduce}>减少被按下</button>
+        <button onClick={this.onButtonAdd}>增加被按下</button>
+        <button onClick={this.onButtonClear}>重置按钮被按下</button>
+        <li>{`D显示${this.props.num}`}</li>
       </div>
     );
   }
