@@ -7,6 +7,7 @@ export default function (option) {
         model,
         dispatch,
         getState,
+        subscribe,
         callBackList:{},
         isBatchUpdate:false
     }
@@ -22,6 +23,7 @@ export default function (option) {
         if (!app._model[m.namespace]){
             app._model[m.namespace] = m
             app._store[m.namespace] = m.state
+            app.callBackList[m.namespace] = {}
         }
     }
 
@@ -32,7 +34,7 @@ export default function (option) {
         const fun = s[1]
         if (isReducers(name,fun)){
             const currState = startReducers(name,fun,action)
-            if (!app.isBatchUpdate){
+            if (!app.isBatchUpdate && currState !== app._store[name]){
                 updateSub(name,currState)
             }
         }else {
