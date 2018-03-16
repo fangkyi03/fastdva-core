@@ -10,11 +10,6 @@ import appModels from './models/app'
 
 const app = createStore({})
 app.model(appModels)
-<<<<<<< HEAD
-=======
-console.log('输出store',app.getState());
-app.dispatch({type:'app/clear',payload:{a:20,b:20,c:30}})
->>>>>>> master
 const AppView = () => {
     return (
         <Provider store={app}>
