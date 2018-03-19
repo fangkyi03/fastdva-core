@@ -67,23 +67,28 @@
 ##model部分
 <code>
 
-      export default {
-      namespace : 'app',
-      state : {
-          a: 0
-      },
-      reducers : {
-          add(state, {payload}) {
-              return ({...state,...payload})
-          }
-      },
-      effects : {
-          *clear({payload},{select,put}){
-              const a = yield select(({app})=>({...app}))
-              console.log('输出a',a)
-              yield put({type:'app/add',payload})
-          }
-      }
+    import test from '../utils/test'
+    export default {
+        namespace : 'app',
+        state : {
+            num: 0
+        },
+        reducers : {
+            add(state, {payload}) {
+                return ({...state,num:state.num + 1})
+            },
+            reduce(state,{payload}){
+                return ({...state,num:state.num - 1})
+            },
+            reset(state,{payload}){
+                return ({...state,num:0})
+            }
+        },
+        effects : {
+            *clear({payload},{select,put,take,call}){
+                yield call(test,11111)
+            }
+        }
     }
 </code>
 这里的使用方式跟dva保持了一致 因为是直接使用的saga来进行的实现 所以saga的一些功能与属性都可以直接的进行使用 不会有影响
