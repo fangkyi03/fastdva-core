@@ -1,8 +1,11 @@
 ## 初始化部分
 
 > 安装
+
 > npm i 
+
 > 调试
+
 > npm run start
 
 <code>
